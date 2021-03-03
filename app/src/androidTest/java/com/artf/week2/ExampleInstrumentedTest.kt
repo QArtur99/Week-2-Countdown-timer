@@ -17,7 +17,7 @@ package com.artf.week2
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.artf.week2.MainActivity
+import com.artf.week2.ui.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
