@@ -10,4 +10,8 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="common_btn_start">Start</string>
+    <string name="common_btn_pause">Pause</string>
+    <string name="common_btn_resume">Resume</string>
+    <string name="common_btn_reset">Reset</string>
 </resources>
