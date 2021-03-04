@@ -37,7 +37,6 @@ import androidx.compose.ui.unit.dp
 import com.artf.week2.R
 import com.artf.week2.ui.theme.MyTheme
 
-// Start building your app here!
 @Composable
 fun AppCompose(mainViewModel: MainViewModel) {
     MyTheme {
