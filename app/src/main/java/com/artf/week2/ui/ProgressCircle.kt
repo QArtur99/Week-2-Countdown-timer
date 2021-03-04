@@ -19,7 +19,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,10 +29,11 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.artf.week2.ui.theme.green600
+import com.artf.week2.ui.theme.green700
 
 @Composable
 fun ProgressCircle(viewModel: MainViewModel) {
-    val arcColor = MaterialTheme.colors.secondary
     Box(contentAlignment = Alignment.Center) {
         Canvas(
             modifier = Modifier
@@ -41,7 +41,21 @@ fun ProgressCircle(viewModel: MainViewModel) {
                 .size(200.dp),
             onDraw = {
                 drawCircle(
-                    color = Color.LightGray,
+                    color = Color.Gray,
+                    style = Stroke(width = 16.dp.toPx())
+                )
+                drawArc(
+                    startAngle = -90f,
+                    sweepAngle = viewModel.progressSweepAngle(),
+                    useCenter = false,
+                    style = Stroke(width = 16.dp.toPx()),
+                    color = green600,
+                    alpha = 1f
+                )
+                drawArc(
+                    startAngle = -90f,
+                    sweepAngle = viewModel.progressSweepAngle(),
+                    useCenter = false,
                     style = Stroke(
                         width = 16.dp.toPx(),
                         pathEffect = PathEffect.dashPathEffect(
@@ -50,15 +64,9 @@ fun ProgressCircle(viewModel: MainViewModel) {
                                 3.dp.toPx()
                             )
                         )
-                    )
-                )
-                drawArc(
-                    startAngle = -90f,
-                    sweepAngle = viewModel.progressSweepAngle(),
-                    useCenter = false,
-                    style = Stroke(width = 16.dp.toPx()),
-                    color = arcColor,
-                    alpha = 0.5f
+                    ),
+                    color = green700,
+                    alpha = 1f
                 )
             }
         )
